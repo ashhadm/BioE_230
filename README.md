@@ -31,7 +31,7 @@ cut -f 11 data_summary.tsv | sort -n | uniq -d | tail -n 1 > large_genome.txt
 
 ```bash
 tail -n +2 data_summary.tsv | cut -f 1| grep -c "c.*c" > atleast_2c.txt
-tail -n +2 data_summary.tsv | cut -f 1| grep -c "c.*c" | grep -cv "coccus" > atleat_2c_coccus.txt
+tail -n +2 data_summary.tsv | cut -f 1| grep -o "c.*c" | grep -cv "coccus" > atleat_2c_coccus.txt
 ```
 ## Use the find command to find all genome files (FASTA) larger than 3 megabyte. How many are there?
 
